@@ -35,8 +35,8 @@ app.use((req,res,next) => {
     res.send('<h1>page not found</h1>')
 })
 
-
-app.listen(process.env.PORT || 3000, ()=> {
+const port = Process.env.PORT || 3000
+app.listen(port || 3000, ()=> {
     console.log('port connected');
     mongoose.connect('mongodb+srv://taskat:taskat@clustertaskat.ipuet.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
     .then(_=> console.log('mognosse connected'))
