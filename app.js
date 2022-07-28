@@ -36,7 +36,7 @@ app.use((req,res,next) => {
 })
 
 
-app.listen(process.env.PORT, ()=> {
+app.listen(process.env.PORT || 5000, ()=> {
     console.log('port connected');
     mongoose.connect(process.env.DB, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(_=> console.log('mognosse connected'))
