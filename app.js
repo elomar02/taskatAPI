@@ -1,7 +1,7 @@
 let express = require('express')
 let mongoose = require('mongoose')
 let cors = require("cors");
-require('dotenv').config()
+// require('dotenv').config()
 let app = express()
 
 // importing routes
@@ -36,9 +36,9 @@ app.use((req,res,next) => {
 })
 
 
-app.listen(process.env.PORT || 5000, ()=> {
+app.listen(process.env.PORT || 3000, ()=> {
     console.log('port connected');
-    mongoose.connect(process.env.DB, {useNewUrlParser: true, useUnifiedTopology: true})
+    mongoose.connect('mongodb+srv://taskat:taskat@clustertaskat.ipuet.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
     .then(_=> console.log('mognosse connected'))
     .catch(e=> console.log('mognosse no connected' + e))
 })
